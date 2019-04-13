@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Countdown Timer</title>
+  <!--<link rel="stylesheet" href="style.css">-->
+</head>
+<body>
+  <div class="timer">
+    <div class="timer__controls">
+        <button id="reset_button" class="timer__button">Clear</button>
+      <form name="customForm">
+        <button id="start_button" class="timer__button">Start</button>
+        <input name="minutes" type="text" placeholder="Enter Minutes">
+      </form>
+    </div>
+    <div class="display">
+      <h1 class="display__time-left"></h1>
+      <p class="display__end-time"></p>
+    </div>
+  </div>
+  <audio id="ooga" src="Klaxon_Alarm_Sound_Effect.mp3" preload="auto"></audio>
+
+  <script src="countdown.js"></script>
+</body>
+</html>
