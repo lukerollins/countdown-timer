@@ -1,6 +1,6 @@
 let countdown;
 const timerDisplay = document.querySelector('.display__time-left');
-const alarm = new Audio("Klaxon_Alarm_Sound_Effect.mp3")
+const alarm = new Audio("QI Klaxon Sound Effect.mp3")
 
 
 function timer(seconds) {
