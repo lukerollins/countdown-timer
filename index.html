@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>Countdown Timer</title>
-  <!--<link rel="stylesheet" href="style.css">-->
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="timer">
     <div class="timer__controls">
-        <button id="reset_button" class="timer__button">Clear</button>
       <form name="customForm">
+        <input name="minutes" type="text" placeholder="Enter Minutes*">
         <button id="start_button" class="timer__button">Start</button>
-        <input name="minutes" type="text" placeholder="Enter Minutes">
+        <button id="reset_button" class="timer__button">Clear</button>
       </form>
+        
     </div>
     <div class="display">
       <h1 class="display__time-left"></h1>
       <p class="display__end-time"></p>
+    </div>
+    <div>
+      <p>*I should note that you can use seconds but, to do that you're gonna have to convert those seconds to decimals. For example "0.5" minutes = 30 seconds. If necessary, just divide the number of seconds you need by sixty (the amount of seconds in a minute). It's not foolproof but it seems to work. 
+      </p>
     </div>
   </div>
   <audio id="ooga" src="Klaxon_Alarm_Sound_Effect.mp3" preload="auto"></audio>

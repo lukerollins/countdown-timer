@@ -46,7 +46,10 @@ function clearing() {
     clearInterval(countdown);
 }
 
-document.getElementById('reset_button').addEventListener('click', clearing);
+document.getElementById('reset_button').addEventListener('click', function (e) {
+    e.preventDefault();
+    clearing();
+});
 document.getElementById('start_button').addEventListener('click', startTimer);
 document.customForm.addEventListener('submit', function(e) {
     e.preventDefault();
