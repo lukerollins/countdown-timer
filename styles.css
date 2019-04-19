@@ -1,3 +1,16 @@
+
+/*.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}*/
+
+.timer__controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 body {
     font-size: 15pt;
 }
@@ -8,34 +21,91 @@ h1.title {
  margin: 5% 1%;   
 }
 
-.kontain {
-    width: 300px;
-    text-align: center;
-    margin: 2% 1%;
-}
-
-button{
+button {
     width: 100%;
     font-size: 17pt;
     border-radius: 0;
     border: solid 3px rgb(0, 0, 0);
-    background: none;
     margin: 1% 0;
 }
+/*button:after {
+background: #f3f3f3;
+}*/
+
+/*button:hover {
+      background-color: #1ABC9C;   transition-duration: .25s, .4s;
+    transition-delay: 0s;
+    opacity: 1;
+	transition-property: opacity, width;
+	transition-duration: .25s, .25s;
+  transition-delay: .15s, 0s;
+  transition-timing-function: cubic-bezier(0, 0, 0.11, 1.24);
+  
+}*/
+
+/*button:hover {
+  box-shadow:0 80px 0 0 black inset;
+  color:white;
+}*/
+
+button:active {
+    color: black;
+    animation: pulse .73s;
+     
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: rgba(0, 0, 0, 0) 0 0 0 0;
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: rgba(0, 0, 0, .8) 0 0 0px 5px;
+        transform: scale(1.025);
+    }
+
+    75% {
+        box-shadow: rgba(0, 0, 0, 1) 0px 15px;
+        transform: scale(1.1);
+    }
+
+    100% {
+        box-shadow: rgba(0, 0, 0, 1) 0px 30px;
+        transform: scale(1.15);
+    }
+}
+
+   
+
 
 
 
 
 input {
-    width: 80%;
+    width: 97%;
     font-size: 13pt;
-    margin-bottom: 5%;
+    margin-bottom: 10%;
+    align-self: center;
     
 }
 
 .display {
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*text-align: center;*/
+}
+
+.display__time-left {
     text-align: center;
 }
+
+.para {
+    margin: 1% 2%;
+}
+
+
 
 
