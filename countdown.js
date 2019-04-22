@@ -16,8 +16,8 @@ function timer(seconds) {
        const secondsLeft = Math.round((then - Date.now()) / 1000);
        if(secondsLeft < 0) {
            clearInterval(countdown);
-           document.title = "Your alarm is going off!!!"
-           timerDisplay.textContent = "Ding! Fries are done!!!";
+           document.title = "Alert On!"
+           timerDisplay.textContent = "Count Over!";
            alarm.play();
            return;
        }
@@ -40,8 +40,7 @@ function startTimer() {
 
 function clearing() {
     timerDisplay.textContent = " ";
-    //endTime.textContent = " ";
-    document.title = "Stop! Reset!";
+    document.title = "Countdown Timer";
     alarm.pause();
     clearInterval(countdown);
 }

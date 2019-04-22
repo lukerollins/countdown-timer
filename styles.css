@@ -3,7 +3,7 @@
 body {
     background-color: rgb(36, 35, 35);
     font-family: 'Press Start 2P', cursive;
-    font-size: 17pt;
+    font-size: 15pt;
     color: rgb(84, 124, 20);
     hyphens: auto;
     -moz-hyphens: auto;
@@ -25,6 +25,7 @@ body {
 h1.title {
  font-size: 30pt;
  text-align: center;
+ padding: 1%;
     
 }
 
@@ -34,7 +35,8 @@ input[name=minutes] {
     font-size: inherit;
     font-family: inherit;
     color: rgba(84, 124, 20, .8);
-    padding: 5px;
+    caret-color: rgb(105, 150, 33); 
+    padding: 7px;
     border: solid 2px rgb(84, 124, 20);
     border-radius: 2.5%;
     background-color: transparent;
@@ -50,13 +52,11 @@ input[name=minutes] {
 
 .display__time-left {
     text-align: center;
-    
-    
-    
 }
 
 .para {
     margin: 1% 2%;
+    font-size: 13pt;
 }
 
 button {
@@ -64,7 +64,7 @@ button {
     font: inherit;
     background-color: transparent;
     height: 60px;
-    font-size: 17pt;
+    font-size: inherit;
     border-radius: 3.75%;
     border: solid 3px rgb(84, 124, 20);
     color: rgb(84, 124, 20);
@@ -106,62 +106,64 @@ button:active {
 /*** Media Queries ***/
 
 @media screen and (min-width: 600px){
-    /*h1.title {
-        margin: 3%;
-        margin-bottom: 10%;
-    }*/
+    h1.title {
+        font-size: 43pt;  
+    }
 
-  
+    h1.display__time-left {
+        font-size: 48pt;
+    }
 
-    /*.display__time-left {
-        font-size:
-    }*/
+    .para {
+        font-size: 17pt;
+    }
+
 
     .timer__controls {
         display: unset;
         justify-content: unset;
         align-items: unset;
-        
-        
         /*border: solid 4px greenyellow;*/
         
     }
 
     form[name=customForm] {
         display: flex;
-    /*justify-content: center;*/
-    /*align-content: stretch;*/
-    text-align: center;
-    /*align-items: stretch;*/
+        text-align: center;
+        justify-content: space-around;
         flex-flow: row wrap;
-    
-        
+        margin: 3%;
+        font-size: 20pt;
+    }
+
+    input[name=minutes] {
+        align-self: baseline;
+        margin-top: 3%;   
+    }
+
+  
+    button {
+        width: 40%;
+        height: 65px; 
+
     }
 
    
-    
-    
-
-    .group {
-        
-        align-items: stretch;
-    }
 
     
 
 
 }
 
-/*@media screen and (min-width: 900px) {
+@media screen and (min-width: 900px) {
 
-
-    input[name=minutes] {
-        
-        margin: 1%;
-        
+    h1.title {
+        font-size: 48pt;
     }
 
-    
-}*/
+    h1.display__time-left {
+        font-size: 56pt;
+    }
+}
 
 
