@@ -1,6 +1,6 @@
-/*background-color for body? rgb(27, 27, 27)*/
-
 body {
+    /*@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+    gonna need this for codepen*/
     background-color: rgb(36, 35, 35);
     font-family: 'Press Start 2P', cursive;
     font-size: 15pt;
@@ -17,16 +17,12 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
-    
-    /*border: solid 4px greenyellow;*/
-    
 }
 
 h1.title {
  font-size: 30pt;
  text-align: center;
- padding: 1%;
-    
+ padding: 1%;    
 }
 
 input[name=minutes] {
@@ -40,13 +36,11 @@ input[name=minutes] {
     border: solid 2px rgb(84, 124, 20);
     border-radius: 2.5%;
     background-color: transparent;
-    margin-bottom: 7%;
-    
+    margin-bottom: 7%; 
 }
 
 .display {
-    width: auto;
-    
+    width: auto; 
     margin: 3%;
 }
 
@@ -69,7 +63,6 @@ button {
     border: solid 3px rgb(84, 124, 20);
     color: rgb(84, 124, 20);
     margin-bottom: 4%;
-
 }
 
 button:active {
@@ -122,9 +115,7 @@ button:active {
     .timer__controls {
         display: unset;
         justify-content: unset;
-        align-items: unset;
-        /*border: solid 4px greenyellow;*/
-        
+        align-items: unset;  
     }
 
     form[name=customForm] {
@@ -141,18 +132,11 @@ button:active {
         margin-top: 3%;   
     }
 
-  
     button {
         width: 40%;
         height: 65px; 
 
     }
-
-   
-
-    
-
-
 }
 
 @media screen and (min-width: 900px) {

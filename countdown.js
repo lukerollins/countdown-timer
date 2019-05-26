@@ -10,6 +10,7 @@ function timer(seconds) {
 
     const now = Date.now();
     const then = now + seconds * 1000;
+    //runs displayTimeLeft once immediately
     displayTimeLeft(seconds);
     
     countdown = setInterval(() => {
@@ -24,7 +25,8 @@ function timer(seconds) {
        displayTimeLeft(secondsLeft);
     }, 1000);
 }
-
+    //running it again. The first time above was to prevent the one second
+    //delay that would happen if just ran it here
 function displayTimeLeft(seconds) {
     const minutes = Math.floor(seconds / 60);
     const remainderSeconds = seconds % 60;
@@ -38,6 +40,7 @@ function startTimer() {
     timer(seconds);
 }
 
+//clears the timer as well as shutting the alarm
 function clearing() {
     timerDisplay.textContent = " ";
     document.title = "Countdown Timer";
