@@ -1,5 +1,6 @@
 let countdown;
 const timerDisplay = document.querySelector('.display__time-left');
+const completeMission = document.querySelector('.mission_complete');
 const alarm = new Audio("QI Klaxon Sound Effect.mp3")
 
 
@@ -12,6 +13,7 @@ function timer(seconds) {
     const then = now + seconds * 1000;
     //runs displayTimeLeft once immediately
     displayTimeLeft(seconds);
+    displayMissionComplete(then);
     
     countdown = setInterval(() => {
        const secondsLeft = Math.round((then - Date.now()) / 1000);
@@ -35,6 +37,15 @@ function displayTimeLeft(seconds) {
     console.log(display);
 }
 
+function displayMissionComplete(timestamp) {
+    const done = new Date(timestamp);
+    const hour = done.getHours();
+    const adjustHr = hour > 12 ? hour - 12 : hour;
+    const minutes = done.getMinutes();
+    completeMission.textContent = `Complete Mission By ${adjustHr}:${minutes < 10 ? '0' : ''}${minutes}`;
+}
+
+
 function startTimer() {
     const seconds = parseInt(this.dataset.time);
     timer(seconds);
@@ -43,6 +54,7 @@ function startTimer() {
 //clears the timer as well as shutting the alarm
 function clearing() {
     timerDisplay.textContent = " ";
+    completeMission.textContent = " ";
     document.title = "Countdown Timer";
     alarm.pause();
     clearInterval(countdown);

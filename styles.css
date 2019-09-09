@@ -1,9 +1,24 @@
+/* press-start-2p-regular - latin */
+@font-face {
+    font-family: 'Press Start 2P';
+    font-style: normal;
+    font-weight: 400;
+    src: url('press-start-2p-v8-latin-regular.eot'); /* IE9 Compat Modes */
+    src: local('Press Start 2P Regular'), local('PressStart2P-Regular'),
+         url('press-start-2p-v8-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('press-start-2p-v8-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
+         url('press-start-2p-v8-latin-regular.woff') format('woff'), /* Modern Browsers */
+         url('press-start-2p-v8-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
+         url('press-start-2p-v8-latin-regular.svg#PressStart2P') format('svg'); /* Legacy iOS */
+  }
+  
+
 body {
     /*@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
     gonna need this for codepen*/
+    font-family: 'Press Start 2P';
     background-color: rgb(36, 35, 35);
-    font-family: 'Press Start 2P', cursive;
-    font-size: 15pt;
+    font-size: 17px;
     color: rgb(84, 124, 20);
     hyphens: auto;
     -moz-hyphens: auto;
@@ -20,7 +35,7 @@ body {
 }
 
 h1.title {
- font-size: 30pt;
+ font-size: 2.25rem;
  text-align: center;
  padding: 1%;    
 }
@@ -44,13 +59,17 @@ input[name=minutes] {
     margin: 3%;
 }
 
-.display__time-left {
+.display__time-left, .mission_complete {
     text-align: center;
+}
+
+.mission_complete {
+    font-size: 0.75rem;
 }
 
 .para {
     margin: 1% 2%;
-    font-size: 13pt;
+    font-size: 1rem;
 }
 
 button {
@@ -100,17 +119,20 @@ button:active {
 
 @media screen and (min-width: 600px){
     h1.title {
-        font-size: 43pt;  
+        font-size: 3rem;  
     }
 
     h1.display__time-left {
-        font-size: 48pt;
+        font-size: 2.1rem;
     }
 
     .para {
-        font-size: 17pt;
+        font-size: 1.33rem;
     }
 
+    .mission_complete {
+        font-size: 0.95rem;
+    }
 
     .timer__controls {
         display: unset;
@@ -142,12 +164,14 @@ button:active {
 @media screen and (min-width: 900px) {
 
     h1.title {
-        font-size: 48pt;
+        font-size: 3.5rem;
     }
 
     h1.display__time-left {
-        font-size: 56pt;
+        font-size: 2.33rem;
     }
+
+    
 }
 
 
