@@ -21,6 +21,7 @@ function timer(seconds) {
            clearInterval(countdown);
            document.title = "Alert On!"
            timerDisplay.textContent = "Count Over!";
+           alarm.loop = true
            alarm.play();
            return;
        }
@@ -42,7 +43,7 @@ function displayMissionComplete(timestamp) {
     const hour = done.getHours();
     const adjustHr = hour > 12 ? hour - 12 : hour;
     const minutes = done.getMinutes();
-    completeMission.textContent = `Complete Mission By ${adjustHr}:${minutes < 10 ? '0' : ''}${minutes}`;
+    completeMission.textContent = `Complete Level By ${adjustHr}:${minutes < 10 ? '0' : ''}${minutes}!!`;
 }
 
 
