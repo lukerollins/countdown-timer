@@ -22,6 +22,7 @@ function timer(seconds) {
            document.title = "Alert On!"
            timerDisplay.textContent = "Count Over!";
            alarm.loop = true
+           alarm.volume = 0.1
            alarm.play();
            return;
        }
