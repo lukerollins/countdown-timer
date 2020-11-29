@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <title>Countdown Timer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!--<link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">-->
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
   
 </head>
 <body>
@@ -13,12 +13,16 @@
   <div class="timer">
     <div class="timer__controls">
       <form name="customForm">
-        <input name="hours" type="number" min="0" placeholder="Enter Hours*">
-        <input name="minutes" type="number" min="0" placeholder="Enter Minutes*">
-        <input name="seconds" type="number" min="0" placeholder="Enter Seconds*">
+      <!--<form>-->
+      <div id="numberInputs">
+        <input name="hours" type="number" min="0"  class="inputs" placeholder="Enter Hours*">
+        <input name="minutes" type="number" min="0" class="inputs" placeholder="Enter Minutes*">
+        <input name="seconds" type="number" min="0" class="inputs" placeholder="Enter Seconds*">
+      </div>
         <button id="start_button" class="timer__button">Start</button>
         <button id="reset_button" class="timer__button">Clear</button>
-      </form>  
+
+      </form>
     </div>
     <div class="display">
       <h1 class="display__time-left"></h1>

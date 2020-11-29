@@ -28,10 +28,12 @@ body {
 }
 
 .timer__controls {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    /*justify-content: center;
     align-items: center;
-    text-align: center;
+    text-align: center;*/
+    /*grid-template-columns: repeat(3, 1fr);*/
+    grid-template-rows: repeat(2, 1fr);
 }
 
 h1.title {
@@ -40,9 +42,18 @@ h1.title {
  padding: 1%;    
 }
 
-input[name=minutes] {
-    box-sizing: border-box;
-    width: 100%;
+/*#numberInputs {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}*/
+
+.inputs {
+    /*! box-sizing: border-box; */
+    /*display: flex;*/
+    /*! width: 33%; */
     font-size: inherit;
     font-family: inherit;
     color: rgba(84, 124, 20, .8);
@@ -51,8 +62,15 @@ input[name=minutes] {
     border: solid 2px rgb(84, 124, 20);
     border-radius: 2.5%;
     background-color: transparent;
-    margin-bottom: 7%; 
+    margin: 1%;
 }
+
+/*#numberInputs {
+    /*display: flex;
+    justify-content: center;
+    align-items: center;/*
+    text-align: center;
+}*/
 
 .display {
     width: auto; 
@@ -73,7 +91,7 @@ input[name=minutes] {
 }
 
 button {
-    width: 100%;
+    width: 1rem;
     font: inherit;
     background-color: transparent;
     height: 60px;
@@ -81,7 +99,7 @@ button {
     border-radius: 3.75%;
     border: solid 3px rgb(84, 124, 20);
     color: rgb(84, 124, 20);
-    margin-bottom: 4%;
+    margin: 2%;
 }
 
 button:active {
@@ -134,18 +152,18 @@ button:active {
         font-size: 0.95rem;
     }
 
-    .timer__controls {
+    /*.timer__controls {
         display: unset;
         justify-content: unset;
         align-items: unset;  
-    }
+    }*/
 
     form[name=customForm] {
-        display: flex;
-        text-align: center;
-        justify-content: space-around;
-        flex-flow: row wrap;
-        margin: 3%;
+        /*! display: flex; */
+        /*! text-align: center; */
+        /*! justify-content: space-around; */
+        /*! flex-flow: row wrap; */
+        /*! margin: 3%; */
         font-size: 20pt;
     }
 
@@ -155,7 +173,7 @@ button:active {
     }
 
     button {
-        width: 40%;
+        width: 41%;
         height: 65px; 
 
     }

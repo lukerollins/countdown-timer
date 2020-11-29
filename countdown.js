@@ -78,35 +78,25 @@ document.customForm.addEventListener('submit', function(e) {
     this.reset();
 });*/
 
-let seconds = document.querySelector('[name="seconds"]').value;
-let minutes = document.querySelector('[name="minutes"]').value;
-let hours = document.querySelector('[name="hours"]').value;
-let timerDisplay = document.querySelector('.display__time-left');
 
-function timer() {
-    
-    clearInterval(countdown)
-    //var remainingSeconds = seconds; 
-    displayRemainingTime(seconds)
-    //clearInterval(countdown)
-    //displayRemainingTime(remainingSeconds)
-    countdown = setInterval(() => {
-        seconds--
-        if (seconds < 0) {
-            clearInterval(countdown);
-            document.title = "Alert On!"
-            timerDisplay.textContent = "Count Over!";
-            return
-        }
-        displayRemainingTime()
-    }, 1000)
-}
+let timerDisplay = document.querySelector('.display__time-left');
+let customForm = document.querySelector('[name="customForm"]');
+
+
+
+
 
 function displayRemainingTime() {
-    const display = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+    var hoursLeft = Math.floor(secondsLeft / 3600)
+    //var remainingHours = hoursLeft % 60;
+    //var adjustHr = hour > 12 ? hour - 12 : hour;
+    var minutesLeft = Math.floor(secondsLeft / 60);
+    var remainingMinutes = minutesLeft % 60;
+    var remainingSeconds = secondsLeft % 60;
+    let display = `${hoursLeft < 10 ? '0' : ''}${hoursLeft}:${remainingMinutes < 10 ? '0' : ''}${remainingMinutes}:${remainingSeconds < 10 ? '0' : ''}${remainingSeconds}`;
     timerDisplay.textContent = display;
     document.title = display;
-    console.log(seconds)
+    console.log(secondsLeft, display)
 }
 
 function clearing() {
@@ -117,18 +107,40 @@ function clearing() {
     clearInterval(countdown);
 }
 
+function timer() {
+    let seconds = document.querySelector('[name="seconds"]').value;
+    let minutes = document.querySelector('[name="minutes"]').value;
+    let hours = document.querySelector('[name="hours"]').value;
+    secondsLeft = (hours * 3600) + (minutes * 60) + seconds;
+    clearInterval(countdown)
+    //var remainingSeconds = seconds; 
+    displayRemainingTime(secondsLeft)
+    //clearInterval(countdown)
+    //displayRemainingTime(remainingSeconds)
+    countdown = setInterval(() => {
+        secondsLeft--
+        if (secondsLeft < 0) {
+            clearInterval(countdown);
+            document.title = "Alert On!"
+            timerDisplay.textContent = "Count Over!";
+            return
+        }
+        displayRemainingTime()
+    }, 1000)
+}
+
 
 document.getElementById('reset_button').addEventListener('click', (e) => {
     e.preventDefault();
     clearing();
     });
 
-document.getElementById('start_button').addEventListener('click', timer);
-document.customForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        //const mins = this.minutes.value;
-        //timer(mins * 60);
-        timer(seconds)
-        
-        this.reset();
-});
+let onSubmit = function(e, secondsLeft, display) {
+    e.preventDefault();
+    timer(secondsLeft);
+    displayRemainingTime(display)
+    this.reset();
+}    
+
+//document.getElementById('start_button').addEventListener('click', timer);
+customForm.addEventListener('submit', onSubmit);
